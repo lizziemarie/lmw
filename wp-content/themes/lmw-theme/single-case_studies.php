@@ -15,28 +15,35 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post();
 				$services = get_field('services');
-				$client = get_field('client');
-				$link = get_field('site_link');
+				$the_problem = get_field('the_problem');
+				$the_solution = get_field('the_solution');
+				$the_outcome = get_field('the_outcome');
 				$image_1 = get_field('image_1');
 				$image_2 = get_field('image_2');
 				$image_3 = get_field('image_3');
+				$image_4 = get_field('image_4');
+				$image_5 = get_field('image_5');
 				$size = "full"; ?>
 
-        <article class="case-study">
-				  <aside class="case-study-sidebar">
-							<h2><?php the_title(); ?></h2>
-							<h4><?php echo $services; ?></h4>
-							<h5>Client: <?php echo $client; ?></h5>
+        <section class="case-study">
+				  <div class="case-study-intro">
+							<h1><?php the_title(); ?></h1>
+							<h3><?php echo $services; ?></h3>
 
 							<?php the_content(); ?>
 
-							<p class="read-more-link"><a href="<?php echo $link; ?>">Visit Live Site</a></p>
-					</aside>
-				</article>
-					<div class="case-study-images">
+							<!-- <p class="read-more-link"><a href="<?php /*echo $link; */?>">Visit Live Site</a></p> -->
+					</div>
+				</section>
+					<div class="case-study-detail">
 						<?php if($image_1) {
 							echo wp_get_attachment_image( $image_1, $size );
 						} ?>
+						<h2>The Problem</h2>
+						<?php echo $the_problem; ?>
+
+						<h2>The Solution</h2>
+						<?php echo $the_solution; ?>
 
 						<?php if($image_2) {
 							echo wp_get_attachment_image( $image_2, $size );
@@ -45,6 +52,17 @@ get_header(); ?>
 						<?php if($image_3) {
 							echo wp_get_attachment_image( $image_3, $size );
 						} ?>
+
+						<?php if($image_4) {
+							echo wp_get_attachment_image( $image_4, $size );
+						} ?>
+
+						<?php if($image_5) {
+							echo wp_get_attachment_image( $image_5, $size );
+						} ?>
+
+						<h2>The Outcome</h2>
+						<?php echo $the_outcome; ?>
 					</div>
 
 

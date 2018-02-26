@@ -11,16 +11,16 @@ get_header(); ?>
 
 	<div id="primary" class="site-content">
 		<div class="main-content" role="main">
+      <h1>Curated Works</h1>
 			<?php while ( have_posts() ) : the_post();
 					$image_1 = get_field('image_1');
 					$size = "medium";
-					$services = get_field('services')?>
+					$services = get_field('services');?>
 
 				<article class="case-study">
 					<aside class="case-study-sidebar">
 						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						<h4><?php echo $services; ?></h4>
-						<?php the_excerpt(); ?>
 						<p><strong><a href="<?php the_permalink(); ?>">View Project</a</strong></p>
 					</aside>
 

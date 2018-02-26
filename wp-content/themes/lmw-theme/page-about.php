@@ -22,9 +22,9 @@ get_header(); ?>
 				</figure>
 
         <h1>Hello, I'm Lizzie Marie.</h1>
-        <h2>I'm happiest when I am making stuff.</h2>
-        <p>I am an independent California based designer and front end developer. My dream day is creating beautiful web and mobile interfaces. Previously, I worked in the fashion world as a buyer in sustainable apparel and before that I was studying business and marketing at Boston University. </p>
-        <p>You can find me working on a variety of projects including UX/UI design, front end development, branding, and wordpress development.</p>
+        <h2>I'm happiest when I'm making stuff.</h2>
+        <p>I’m an independent California based designer and front end developer. My dream work day is solving new challenges while building beautiful websites. Previously, I worked in the fashion world as a buyer in sustainable apparel and before that I was studying business and marketing at Boston University.</p>
+        <p>You can find me working on a variety of projects including UX/UI design, front end development, branding, and Wordpress development.</p>
       </section> <!--about.blurb -->
 
 
