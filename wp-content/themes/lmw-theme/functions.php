@@ -45,6 +45,7 @@ if ( ! function_exists( 'tww_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'tww' ),
+			'social-media' => esc_html__('Social Media Nav', 'tww')
 		) );
 
 		/*
@@ -156,3 +157,5 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+//social media nav
