@@ -21,19 +21,21 @@
 </head>
 
 <body <?php body_class(); ?>>
+
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'tww' ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="colophon">
 
-		<div class="site-branding">
-			<a href="<?php echo site_url(); ?>" class="top-logo">
-				<span class="title"><?php bloginfo('name'); ?></span>
-			</a>
-		</div><!-- .site-branding -->
+		<nav class="nav-container">
+			<div class="nav-item-1">
+				<a href="<?php echo site_url(); ?>" class="top-logo">
+					<span class="title"><?php bloginfo('name'); ?></span>
+				</a>
+			</div>
 
-		<nav id="site-navigation" class="main-navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_class' => 'nav-menu' ) ); ?>
+			<div class="nav-item-2">
+				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_class' => 'nav-menu' ) ); ?>
+			</div>
 		</nav><!-- #site-navigation -->
 
 	</header><!-- #masthead -->
