@@ -24,19 +24,22 @@
 
 <div id="page" class="site">
 
-	<header id="masthead" class="colophon">
+	<header id="masthead" class="colophon site-header">
 
-		<nav class="nav-container">
-			<div class="nav-item-1">
-				<a href="<?php echo site_url(); ?>" class="top-logo">
-					<span class="title"><?php bloginfo('name'); ?></span>
-				</a>
+			<div class="bar">
 			</div>
+			
+			<nav class="nav-container">
+				<div class="nav-item-1">
+					<a href="<?php echo site_url(); ?>" class="top-logo">
+						<span class="title"><?php bloginfo('name'); ?></span>
+					</a>
+				</div>
 
-			<div class="nav-item-2">
-				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_class' => 'nav-menu' ) ); ?>
-			</div>
-		</nav><!-- #site-navigation -->
+				<div class="nav-item-2">
+					<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_class' => 'nav-menu' ) ); ?>
+				</div>
+			</nav><!-- #site-navigation -->
 
 	</header><!-- #masthead -->
 

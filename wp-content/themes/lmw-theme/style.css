@@ -48,7 +48,7 @@ html {
 	-ms-text-size-adjust: 100%;
 }
 
-/*body {
+body {
 	margin: 0;
 }
 
@@ -262,12 +262,13 @@ body {
 
 h1, h2, h3, h4, p {
 	color: #012241;
-	font: 'Roboto', Arial, sans-serif;
-	line-height: 1.5;
+	font-family: 'Roboto', Arial, sans-serif;
+	margin: 0;
 }
 
 p {
-	font: 16px/1.65 'Roboto', Arial, sans-serif;
+	font-size: 1em;
+	line-height: 1.35em;
 }
 
 
@@ -342,60 +343,10 @@ table {
 }
 
 /*--------------------------------------------------------------
-# Layout
+# Front Page
 --------------------------------------------------------------*/
 
-.site {
-	display: grid;
-	grid-template-columns: 1fr repeat(6, minmax(auto,10em)) 1fr;
-	grid-template-rows: minmax(1em, auto) 1fr auto minmax(1em, auto);
-	grid-row-gap: 1.45em;
-}
-
-.masthead,
-.colophon {
-	grid-column: span 8;
-}
-
-/* header nav layout */
-					.nav-container {
-						display: grid;
-						grid-template-columns: 1fr repeat(6, minmax(auto,10em)) 1fr;
-						grid-template-rows: 80px;
-						padding-bottom: 1%;
-					}
-										.nav-item-1 {
-											grid-column: 2/4;
-											align-self: end;
-											justify-self: start;
-										} /* lizzie marie site title*/
-										.nav-item-2 {
-											grid-column: 6/8;
-											align-self: center;
-										} /*nav menu*/
-													#menu-top-nav {
-														display: grid;
-														align-items: end;
-														justify-items: end;
-														grid-template-columns: repeat(3, minmax(auto,10em));
-														grid-template-rows: 80px;
-													} /*ul list of nav items*/
-																li#menu-item-32 {
-																	grid-column: 1/2;
-																}
-																li#menu-item-32 {
-																	grid-column: 2/3;
-																}
-																li#menu-item-32 {
-																	grid-column: 1/2;
-																}
-
-
-.site-content {
-	grid-column: 2/8;
-}
-
-/* front page layout */
+/* Layout */
 					.hero-content {
 						display: grid;
 						grid-template-columns: repeat(9, minmax(auto,10em));
@@ -436,70 +387,62 @@ table {
 																		}
 
 
-
-
-
-
-/* Footer */
-.site-footer {
-	grid-column: span 8;
-	grid-row: 4;
-}
-		.site-info {
-			display: grid;
-			grid-template-columns: 1fr repeat(6, minmax(auto,10em)) 1fr;
-			grid-template-rows: repeat(6,50px);
-		}
-					.contact-container {
-						grid-column: 2/5;
-						grid-row: 1;
-					}
-					.social-media-navigation {
-						grid-column: 5/8;
-						grid-row: 1;
-						align-self: start;
-					} /*social media menu*/
-									.social-media-menu {
-										display: grid;
-										justify-items: end;
-										grid-template-columns: repeat(4, minmax(auto,10em));
-										grid-template-rows: repeat(3, minmax(auto,2em));
-									} /*ul list of nav items*/
-
-												li#menu-item-19 {
-													grid-column: 1/2;
-													grid-row: 2;
-												}
-
-												li#menu-item-18 {
-													grid-column: 2/3;
-													grid-row: 2;
-												}
-
-												li#menu-item-20 {
-													grid-column: 3/4;
-													grid-row: 2;
-												}
-												li#menu-item-21 {
-													grid-column: 4/5;
-													grid-row: 2;
-												}
-
-
-
-
-
-
 /*--------------------------------------------------------------
 ## Header Styles
 --------------------------------------------------------------*/
+/*Layout -- see above */
+header {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 20px 60px;
+}
+		.nav-container {
+			grid-row-start: 2;
+			display: grid;
+			grid-template-columns: 2fr 3fr;
+			grid-template-rows: 60px;
+		}
+				.nav-item-1 {
+					grid-column: 1/2;
+					align-self: end;
+					padding-left: 5px;
+				}/* lizzie marie site title*/
+				.nav-item-2 {
+					grid-column: 2/3;
+					display: grid;
+					grid-template-columns: 1fr;
+				}/*nav menu*/
+						#menu-top-nav {
+							display: grid;
+							margin-top: 0;
+							align-items: end;
+							justify-items: center;
+							grid-template-columns: repeat(3, minmax(auto,10em));
+							grid-template-rows: 60px;
+							} /*ul list of nav items*/
+																li#menu-item-32 {
+																	grid-column: 1/2;
+																	padding-bottom: 5px;
+																}/*work*/
+																li#menu-item-25 {
+																	grid-column: 2/3;
+																	padding-bottom: 5px;
+																}/*about*/
+																li#menu-item-23 {
+																	grid-column: 3/4;
+																	padding-bottom: 5px;
+																} /*contact*/
+
+
+
+/*Typography*/
 .top-logo {
 	text-decoration: none;
 }
 
 .nav-container .top-logo .title {
    color: #012241;
-   font: 700 1.875em/1.3125 'Roboto', Arial, sans-serif;
+   font: 700 1.75em/1.3125 'Roboto', Arial, sans-serif;
    text-transform: lowercase;
 	 text-decoration: none;
 }
@@ -526,13 +469,54 @@ ul li a:hover {
 /*--------------------------------------------------------------
 ## Footer Styles
 --------------------------------------------------------------*/
+/* Layout */
+
+/* Footer layout */
+.footer-main {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 150px 75px 20px;
+		}
+					.contact-container {
+						grid-row: 1;
+						padding-left: 10px;
+						padding-top: 20px;
+					}
+					.social-media-navigation {
+						grid-row: 2;
+					} /*social media menu*/
+									.social-media-menu {
+										display: grid;
+										grid-template-columns: repeat(4, minmax(auto,10em));
+										padding-left: 10px
+									} /*ul list of nav items*/
+
+												li#menu-item-19 {
+													grid-column: 1/2;
+												}
+
+												li#menu-item-18 {
+													grid-column: 2/3;
+												}
+
+												li#menu-item-20 {
+													grid-column: 3/4;
+												}
+												li#menu-item-21 {
+													grid-column: 4/5;
+												}
+					.bar {
+						background-color: #012241;
+					}/*header and footer bar*/
+
+/*Typography*/
 .site-footer {
 	border-top: solid 1px rgba(1, 34, 65, 0.23);
 }
 
 .contact-container p {
 	font-weight: 200;
-	font-size: 1.875em;
+	font-size: 1.75em;
 }
 
 .social-media-menu li {
@@ -544,35 +528,100 @@ ul li a:hover {
 /*--------------------------------------------------------------
 ## Contact Page Styles
 --------------------------------------------------------------*/
+/* Layout */
 .contact-main {
 	display: grid;
-	grid-template-columns: repeat(12, minmax(auto,10em));
-	grid-template-rows: 80px repeat(2, minmax(auto,10em)) 200px;
+	grid-template-columns: 1fr;
+	grid-template-rows: 80px 120px 50px 80px;
+	justify-items: center;
+	text-align: center;
 }
-			.contact-item-1 {
-				grid-row: 2;
-				grid-column: 3/6;
-			}
-			.contact-item-2 {
-				grid-row: 2;
-				grid-column: 7/12;
-			}
-			.contact-item-3 {
-				grid-row: 3;
-				grid-column: 3/6;
-			}
-			.contact-item-4 {
-				grid-row: 3;
-				grid-column: 7/12;
-			}
+		.contact-item-1,
+		.contact-item-3 {
+			align-self: end;
+			padding: 5px;
+		}
+		.contact-item-2 {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
 
-
+/*Typography*/
 .contact-item-4 p{
-	line-height: .5em;
+	line-height: 1.35em;
 }
 
+/*--------------------------------------------------------------
+## About Page Styles
+--------------------------------------------------------------*/
+/*Mobile Layout*/
+.about-main {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr auto auto 1fr;
+	grid-column-gap: 11px;
+	grid-row-gap: 2em;
+}
+				figure.about-image-1 {
+					padding-top: 10px;
+				}
+				.about-item-1 {
+					margin-left: 1em;
+					margin-right: 1em;
+				}
+				figure.about-image-2 {
+				}
+				.about-item-2 {
+					margin-left: 1em;
+				}
 
 
+/*Typography*/
+.about-main h1{
+	font-size: 2.25em;
+	font-weight: 100;
+	padding-bottom: 5px;
+}
+
+.about-main h2{
+	font-size: 1.25em;
+	font-weight: 500;
+	padding-bottom: 10px;
+}
+
+.about-item-1 p{
+	padding-bottom: 1.125em;
+}
+
+.about-item-2 ul li {
+	font-size: 1.125em;
+	line-height: 1.5em;
+	list-style: none;
+	color: #012241;
+}
+
+.about-item-2 ul {
+	margin-top: 2px;
+}
+
+.work-inquiries {
+	padding-top: 1.5em;
+}
+
+.work-inquiries p {
+	font-size: 1.125em;
+}
+figure.about-image-1,
+figure.about-image-2 {
+	width: 100%;
+	height: auto;
+	margin: 0;
+}
+
+/*figure {
+	-webkit-margin-end: 0px;
+	-webkit-margin-start: 0px;
+}
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
@@ -703,6 +752,20 @@ a:hover, a:active {
 # Content
 --------------------------------------------------------------*/
 
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	/* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
 
 
 /*--------------------------------------------------------------
@@ -728,3 +791,212 @@ object {
 /*.custom-logo-link {
 
 }
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media (min-width:768px) {
+
+
+
+@media (min-width:940px) {
+
+
+	.site {
+		display: grid;
+		grid-template-columns: 1fr repeat(6, minmax(auto,10em)) 1fr;
+		grid-template-rows: minmax(1em, auto) 1fr auto minmax(1em, auto);
+		grid-row-gap: 1.45em;
+	}
+
+	.masthead,
+	.colophon {
+		grid-column: span 8;
+	}
+
+	/* header nav layout */
+						.nav-container {
+							display: grid;
+							grid-template-columns: 1fr repeat(6, minmax(auto,10em)) 1fr;
+							grid-template-rows: 80px;
+							padding-bottom: 1%;
+						}
+											.nav-item-1 {
+												grid-column: 2/4;
+												align-self: end;
+												justify-self: start;
+											} /* lizzie marie site title*/
+											.nav-item-2 {
+												grid-column: 6/8;
+												align-self: center;
+											} /*nav menu*/
+														#menu-top-nav {
+															display: grid;
+															align-items: end;
+															justify-items: end;
+															grid-template-columns: repeat(3, minmax(auto,10em));
+															grid-template-rows: 80px;
+														} /*ul list of nav items*/
+																	li#menu-item-32 {
+																		grid-column: 1/2;
+																	}
+																	li#menu-item-32 {
+																		grid-column: 2/3;
+																	}
+																	li#menu-item-32 {
+																		grid-column: 1/2;
+																	}
+
+
+	.site-content {
+		grid-column: 2/8;
+	}
+
+	/* front page layout */
+						.hero-content {
+							display: grid;
+							grid-template-columns: repeat(9, minmax(auto,10em));
+							grid-template-rows: repeat(10, minmax(auto,10em));
+						}
+											#primary{
+												grid-column: 1/10;
+												grid-row: 1/5;
+											}/*design and development copy*/
+											.featured-work {
+												grid-column: 1/-1;
+												background-color: yellow;
+												justify-self: center;
+											}
+											.homepage-featured-work {
+												grid-row: 6/11;
+												grid-column: 1/-1;
+												display: grid;
+												grid-template-columns: repeat(9, minmax(auto,10em));
+												grid-template-rows: repeat(4, 2fr));
+												grid-row-gap: 1.45em;
+											}
+														.individual-featured-work {
+															grid-column: 1/-1;
+															display: grid;
+															grid-template-columns: repeat(9, minmax(1fr,10em));
+															grid-template-rows: repeat(4,minmax(auto,5em));
+															grid-column-gap: 1.45em;
+														} /* list item */
+																			#featured-work-image {
+																				grid-column: 1/6;
+																			}
+																			.individual-featured-work-copy {
+																				grid-column: 6/10;
+																				grid-row-start: 2;
+																				justify-self: start
+																				align-self: center;
+																			}
+
+
+
+
+
+
+	/* Footer */
+	.site-footer {
+		grid-column: span 8;
+		grid-row: 4;
+	}
+			.site-info {
+				display: grid;
+				grid-template-columns: 1fr repeat(6, minmax(auto,10em)) 1fr;
+				grid-template-rows: repeat(6,50px);
+			}
+						.contact-container {
+							grid-column: 2/5;
+							grid-row: 1;
+						}
+						.social-media-navigation {
+							grid-column: 5/8;
+							grid-row: 1;
+							align-self: start;
+						} /*social media menu*/
+										.social-media-menu {
+											display: grid;
+											justify-items: end;
+											grid-template-columns: repeat(4, minmax(auto,10em));
+											grid-template-rows: repeat(3, minmax(auto,2em));
+										} /*ul list of nav items*/
+
+													li#menu-item-19 {
+														grid-column: 1/2;
+														grid-row: 2;
+													}
+
+													li#menu-item-18 {
+														grid-column: 2/3;
+														grid-row: 2;
+													}
+
+													li#menu-item-20 {
+														grid-column: 3/4;
+														grid-row: 2;
+													}
+													li#menu-item-21 {
+														grid-column: 4/5;
+														grid-row: 2;
+													}
+
+
+
+
+/*--------------------------------------------------------------
+## About Page Styles
+--------------------------------------------------------------*/
+	/* Layout*/
+	.about-main {
+		display: grid;
+		grid-template-columns: repeat(9, minmax(auto,6.125em));
+		grid-template-rows: 3fr 3fr 1fr;
+		grid-column-gap: 11px;
+		grid-row-gap: 40px;
+	}
+					figure.about-image-1 {
+						grid-column: 1/5;
+					}
+					.about-item-1 {
+						grid-column: 5/10;
+						margin-left: 1em;
+					}
+					figure.about-image-2 {
+						grid-column: 6/10;
+						grid-row-start: 2;
+					}
+					.about-item-2 {
+						grid-column: 1/6;
+						grid-row-start: 2;
+						justify-self: end;
+					}
+/*--------------------------------------------------------------
+## Contact Page Styles
+--------------------------------------------------------------*/
+/* Layout*/
+	.contact-main {
+		display: grid;
+		grid-template-columns: repeat(12, minmax(auto,10em));
+		grid-template-rows: 80px repeat(2, minmax(auto,10em)) 200px;
+	}
+				.contact-item-1 {
+					grid-row: 2;
+					grid-column: 3/6;
+				}
+				.contact-item-2 {
+					grid-row: 2;
+					grid-column: 7/12;
+				}
+				.contact-item-3 {
+					grid-row: 3;
+					grid-column: 3/6;
+				}
+				.contact-item-4 {
+					grid-row: 3;
+					grid-column: 7/12;
+				}

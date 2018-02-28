@@ -14,7 +14,7 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
+		<div class="footer-main">
 
 			<div class="contact-container">
 					<p> Let's chat over tea.<br>
@@ -28,6 +28,8 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'social-media', 'menu_class' => 'social-media-menu' ) ); ?>
 			</nav> <!-- .social-media.navigation -->
 
+			<div class="bar">
+			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
